@@ -427,6 +427,10 @@ FAILED      → 赤
 UNREACHABLE → 赤
 ```
 
+## 点検結果画面
+
+![Check Results](screenshots/check_results.png)
+
 ---
 
 # Phase 8：ExcelからLinuxを操作
@@ -497,6 +501,10 @@ if status == "SUCCESS":
 ```
 
 これにより、同じ操作が何度も実行されることを防止しています。
+
+## 操作指示画面
+
+![Operation Requests](screenshots/operation_requests.png)
 
 ---
 
@@ -595,6 +603,10 @@ Ansible側：
 
 これにより、自動化処理そのものが無期限に停止するリスクを減らしています。
 
+## 障害復旧結果
+
+![Recovery Success](screenshots/recovery_success.png)
+
 ---
 
 # Phase 10：Excelダッシュボード
@@ -655,6 +667,10 @@ UNREACHABLE
 ```
 
 の件数をグラフ化し、現在のサーバ状態を視覚的に確認できるようにしました。
+
+## ダッシュボード
+
+![Linux Server Operations Dashboard](screenshots/dashboard.png)
 
 ---
 
