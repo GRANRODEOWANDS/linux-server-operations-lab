@@ -853,3 +853,17 @@ GUI / API / CLIからAnsibleを操作する仕組みへの発展を考えてい�
 
 インフラ運用・Linux・Ansible・Python・自動化を学習しながら、  
 実際に手を動かして検証した内容をポートフォリオとして公開しています。
+
+# Phaseレビュー資料
+
+各Phaseで実施した内容・コマンド・トラブルシュート・学びをPDFにまとめています。
+
+- [Phase 2 Review](docs/Linux_Server_Operations_Lab_Phase2_Review.pdf)
+- [Phase 3 Review](docs/Linux_Server_Operations_Lab_Phase3_Review.pdf)
+- [Phase 4 Review](docs/Linux_Server_Operations_Lab_Phase4_Review.pdf)
+- [Phase 5 Review](docs/Linux_Server_Operations_Lab_Phase5_Review.pdf)
+- [Phase 6 Review](docs/Linux_Server_Operations_Lab_Phase6_Review.pdf)
+- [Phase 7 Review](docs/Linux_Server_Operations_Lab_Phase7_Review.pdf)
+- [Phase 8 Review](docs/Linux_Server_Operations_Lab_Phase8_Review.pdf)
+- [Phase 9 Review](docs/Linux_Server_Operations_Lab_Phase9_Review.pdf)
+- [Phase 10 Review](docs/Linux_Server_Operations_Lab_Phase10_Review.pdf)
