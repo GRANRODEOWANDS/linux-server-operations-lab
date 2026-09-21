@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+
+# Ansible temporary / retry files
+*.retry
+.ansible/
+
+# SSH / secrets
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# Tokens / credentials / environment variables
+.env
+.env.*
+*.token
+credentials.*
+secrets.*
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Excel temporary lock files
+~$*.xlsx
+
+# Backup files
+*.bak
+*.backup
+
+inventory/hosts_test_unreachable.ini

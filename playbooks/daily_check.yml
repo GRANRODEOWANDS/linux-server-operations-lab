@@ -1,0 +1,68 @@
+---
+- name: Daily server check
+  hosts: servers
+  gather_facts: false
+
+  tasks:
+    - name: Check uptime
+      ansible.builtin.command: uptime
+      register: uptime_result
+      changed_when: false
+
+    - name: Show uptime
+      ansible.builtin.debug:
+        var: uptime_result.stdout
+
+    - name: Check memory
+      ansible.builtin.command: free -m
+      register: memory_result
+      changed_when: false
+
+    - name: Show memory
+      ansible.builtin.debug:
+        var: memory_result.stdout
+
+    - name: Check disk
+      ansible.builtin.command: df -h /
+      register: disk_result
+      changed_when: false
+
+    - name: Show disk
+      ansible.builtin.debug:
+        var: disk_result.stdout
+
+    - name: Check OS
+      ansible.builtin.command: cat /etc/os-release
+      register: os_result
+      changed_when: false
+
+    - name: Show OS
+      ansible.builtin.debug:
+        var: os_result.stdout
+
+    - name: Check IP address
+      ansible.builtin.command: ip -br addr
+      register: ip_result
+      changed_when: false
+
+    - name: Show IP address
+      ansible.builtin.debug:
+        var: ip_result.stdout
+
+    - name: Check nginx
+      ansible.builtin.command: systemctl is-active nginx
+      register: nginx_result
+      changed_when: false
+
+    - name: Show nginx
+      ansible.builtin.debug:
+        var: nginx_result.stdout
+
+    - name: Check CPU
+      ansible.builtin.shell: top -bn1 | grep '%Cpu'
+      register: cpu_result
+      changed_when: false
+
+    - name: Show CPU
+      ansible.builtin.debug:
+        var: cpu_result.stdout
