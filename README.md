@@ -175,6 +175,39 @@ MacとLinuxから同じExcelファイルを扱えるようにしました。
 
 # ディレクトリ構成
 
+a
+                └── omiya
+```
+
+ExcelとController間では、VirtualBoxの共有フォルダを使用しています。
+
+これにより、Excelファイルを毎回scpで送受信する必要がなくなり、  
+MacとLinuxから同じExcelファイルを扱えるようにしました。
+
+---
+
+# 検証環境
+
+## Controller
+
+| 項目 | 内容 |
+|---|---|
+| OS | Ubuntu 24.04 |
+| Python | 3.12 |
+| Ansible | Core 2.16 |
+| Excel操作 | openpyxl |
+| 仮想環境 | VirtualBox |
+
+## Managed Servers
+
+| ServerID | Hostname | IP Address | OS | Role | Environment |
+|---|---|---|---|---|---|
+| SV001 | tokyo | 192.168.56.11 | Ubuntu 24.04 | web | DEV |
+| SV002 | yokohama | 192.168.56.12 | Ubuntu 24.04 | web | DEV |
+| SV003 | omiya | 192.168.56.13 | Ubuntu 24.04 | web | DEV |
+
+※ IPアドレスはVirtualBox内の検証用プライベートネットワークです。
+
 ```text
 linux-server-operations-lab/
 ├── inventory/
@@ -189,9 +222,6 @@ linux-server-operations-lab/
 │   ├── execute_operations.py
 │   └── write_results.py
 │
-├── .gitignore
-└── README.md
-```
 
 ---
 
@@ -933,6 +963,11 @@ GUI / API / CLIからAnsibleを操作する仕組みへの発展を考えてい�
 - [Phase 9 Review](docs/Linux_Server_Operations_Lab_Phase9_Review.pdf)
 - [Phase 10 Review](docs/Linux_Server_Operations_Lab_Phase10_Review.pdf)
 
+### Linux運用保守・実機検証の総括資料
+
+全8テーマの検証目的、実施内容、障害の切り分け、復旧確認、学んだことをまとめたPDFです。
+
+- [Linux運用保守・実機検証 総括PDF（全8テーマ）](docs/Linux_Server_Operations_Lab_Complete_Review_Phase1-8.pdf)
 
 
 ## 実機検証シナリオ（全8テーマ）
