@@ -867,3 +867,35 @@ GUI / API / CLIからAnsibleを操作する仕組みへの発展を考えてい�
 - [Phase 8 Review](docs/Linux_Server_Operations_Lab_Phase8_Review.pdf)
 - [Phase 9 Review](docs/Linux_Server_Operations_Lab_Phase9_Review.pdf)
 - [Phase 10 Review](docs/Linux_Server_Operations_Lab_Phase10_Review.pdf)
+
+
+
+## 実機検証シナリオ（全8テーマ）
+
+VirtualBox上のUbuntu Server 24.04を使用し、Linuxサーバの運用保守を想定した障害再現・原因調査・復旧確認を実施しました。
+
+各シナリオでは、実際に使用したコマンド、確認結果、学んだことをまとめています。
+
+| No. | 検証テーマ | 検証内容 |
+|---|---|---|
+| 01 | [nginx停止障害](scenarios/01_nginx_stop.md) | サービス停止・状態確認・復旧 |
+| 02 | [nginx設定ミス](scenarios/02_nginx_config_error.md) | 設定エラー・起動失敗・修正 |
+| 03 | [403 Forbidden](scenarios/03_permission_error.md) | ファイル権限・エラーログ・復旧 |
+| 04 | [ディスク容量不足](scenarios/04_disk_full.md) | 容量不足の再現・調査・解消 |
+| 05 | [DNS・ネットワーク](scenarios/05_dns_troubleshooting.md) | 名前解決・通信経路の切り分け |
+| 06 | [SSH接続障害](scenarios/06_ssh_troubleshooting.md) | ポート・認証・ログの調査 |
+| 07 | [バックアップと復元](scenarios/07_backup_restore.md) | cp・tar・rsyncによるバックアップと復元 |
+| 08 | [最終演習](scenarios/08_final_recovery.md) | nginx設定ミスの検出・バックアップからの復元 |
+
+### 検証の進め方
+
+各テーマでは、基本的に次の流れを意識しました。
+
+1. 正常状態を確認する
+2. 検証環境で障害を再現する
+3. エラーメッセージやログから原因を調査する
+4. 修正・復旧を行う
+5. 正常な状態に戻ったことを確認する
+6. 使用したコマンドと学んだことを記録する
+
+※ 本リポジトリは自宅の仮想環境で行った学習・検証記録です。本番環境での障害対応実績を示すものではありません。
