@@ -1,5 +1,70 @@
 # Linuxサーバー運用ラボ
 
+## プロジェクト概要
+
+このリポジトリは、自宅のVirtualBox環境を使って、Linuxサーバの管理・自動化・障害対応を学習した記録です。
+
+主に2つのテーマに取り組みました。
+
+**① Excel × Python × Ansible × Linuxによる運用自動化**
+
+Ubuntu Server 3台を対象に、Excelの管理台帳からAnsible Inventoryを生成し、サーバの一括点検、結果のExcelへの書き戻し、操作指示、nginx障害の検知・復旧までを検証しました。
+
+**② Linux運用保守の実機検証（全8テーマ）**
+
+nginxの停止、設定ミス、ファイル権限、ディスク容量不足、DNS、SSH、バックアップ・復元などを検証しました。
+
+正常状態の確認から、障害再現、原因調査、修正、復旧確認までの流れを記録しています。
+
+いずれも自宅の検証環境で実施した学習成果であり、本番環境での運用実績ではありません。
+
+## 成果物一覧
+
+| 成果物 | 内容 | リンク |
+|---|---|---|
+| 運用自動化プロジェクト | Excel・Python・Ansible・Linuxを連携したPhase 1〜10の検証 | [検証内容を見る](#phase-1linuxpythonansible環境確認) |
+| Linux運用保守の実機検証 | 障害再現・原因調査・復旧確認の8テーマ | [8テーマ一覧を見る](#実機検証シナリオ全8テーマ) |
+| 検証手順 | 実行コマンド・結果・切り分け手順 | [scenariosフォルダ](scenarios/) |
+| Phaseレビュー資料 | 各Phaseの振り返りPDF | [docsフォルダ](docs/) |
+
+## 目次
+
+### 運用自動化プロジェクト
+
+- [システム構成](#システム構成)
+- [検証環境](#検証環境)
+- [ディレクトリ構成](#ディレクトリ構成)
+- [Phase 1：環境確認](#phase-1linuxpythonansible環境確認)
+- [Phase 2：Excelサーバ管理台帳](#phase-2excelサーバ管理台帳)
+- [Phase 3：PythonからExcelを読み込む](#phase-3pythonからexcelを読み込む)
+- [Phase 4：Ansible Inventory生成](#phase-4excelからansible-inventoryを生成)
+- [Phase 5：Linux日次点検](#phase-5ansibleによるlinux日次点検)
+- [Phase 6：Ansible結果解析](#phase-6pythonでansible結果を解析)
+- [Phase 7：Excelへの結果書き戻し](#phase-7点検結果をexcelへ自動書き戻し)
+- [Phase 8：ExcelからLinuxを操作](#phase-8excelからlinuxを操作)
+- [Phase 9：障害検知・復旧](#phase-9障害検知復旧)
+- [Phase 10：Excelダッシュボード](#phase-10excelダッシュボード)
+
+### Linux運用保守の実機検証
+
+- [全8テーマの検証一覧](#実機検証シナリオ全8テーマ)
+- [nginx停止障害](scenarios/01_nginx_stop.md)
+- [nginx設定ミス](scenarios/02_nginx_config_error.md)
+- [403 Forbidden・ファイル権限](scenarios/03_permission_error.md)
+- [ディスク容量不足](scenarios/04_disk_full.md)
+- [DNS・ネットワーク](scenarios/05_dns_troubleshooting.md)
+- [SSH接続障害](scenarios/06_ssh_troubleshooting.md)
+- [バックアップと復元](scenarios/07_backup_restore.md)
+- [最終演習](scenarios/08_final_recovery.md)
+
+### 資料・その他
+
+- [Phaseレビュー資料](#phaseレビュー資料)
+- [セキュリティについて](#セキュリティについて)
+- [今後の発展案](#今後の発展案)
+
+---
+
 Excel × Python × Ansible × Linux を組み合わせて、  
 Linuxサーバ3台の管理・点検・操作・障害復旧を自動化する検証プロジェクトです。
 
